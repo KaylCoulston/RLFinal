@@ -1,0 +1,3 @@
+[submodule "examples/universe-starter-agent"]
+	path = examples/universe-starter-agent
+	url = https://github.com/openai/universe-starter-agent.git
