@@ -1,3 +1,6 @@
 [submodule "examples/universe-starter-agent"]
 	path = examples/universe-starter-agent
 	url = https://github.com/openai/universe-starter-agent.git
+[submodule "examples/asynchronous_1step"]
+	path = examples/asynchronous_1step
+	url = https://github.com/babaktr/asynchronous_1step.git
