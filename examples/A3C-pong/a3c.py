@@ -316,6 +316,7 @@ with tf.device("/cpu:0"):
     trainer = tf.train.AdamOptimizer(learning_rate=1e-4) #using adam optimizer
     master_network = AC_Network(s_size,a_size,'global',None) # Generate global network
     num_workers = multiprocessing.cpu_count() # Set workers ot number of available CPU threads
+    #num_workers = 3
     workers = []
     # Create worker classes
     for i in range(num_workers):
