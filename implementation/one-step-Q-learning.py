@@ -16,6 +16,21 @@ from random import choice
 from time import sleep
 from time import time
 
+class Network():
+	def __init__(self, s_size, a_size, scope, trainer):
+		with tf.variable_scope(scope):
+	            #Input and visual encoding layers
+        	    self.inputs = tf.placeholder(shape=[None,s_size],dtype=tf.float32)
+            self.imageIn = tf.reshape(self.inputs,shape=[-1,84,84,1])
+	            self.conv1 = slim.conv2d(activation_fn=tf.nn.elu,
+                inputs=self.imageIn,num_outputs=16,
+                kernel_size=[8,8],stride=[4,4],padding='VALID')
+            self.conv2 = slim.conv2d(activation_fn=tf.nn.elu,
+                inputs=self.conv1,num_outputs=32,
+                kernel_size=[4,4],stride=[2,2],padding='VALID')
+            hidden = slim.fully_connected(slim.flatten(self.conv2),256,activation_fn=tf.nn.elu)
+
+
 class OneStepQWorker():
 	#code
 	def __init__(self, global_theta, global_theta_target, global_T):
