@@ -157,7 +157,6 @@ class A3CTrainingThread(object):
       #accumulate TD error for the action took
       td_arr.append((y - qvalue[action]) **2)
 
-      #TODO: Put this shit into tensor board
       self.episode_reward += reward
 
       #This goes to gradient computation
